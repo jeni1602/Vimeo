@@ -1,0 +1,36 @@
+﻿@model SJJCNew.Models.CoachModel
+
+@{
+    ViewBag.Title = "Create Coach Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Fixed path to shared layout
+
+    ViewBag.Brl = "All Coaches";
+    ViewBag.Controller1 = "Coach";
+    ViewBag.Action1 = "Index";
+}
+
+@using (Html.BeginForm("Refresh", "Coach", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="panel-warning">
+        @if (ViewBag.Result != null && ViewBag.Result != "")
+        {
+            <div class="callout callout-success" style="margin-bottom: 0 !important;">
+                <h4><i class="fa fa-info"></i> Success</h4>
+                Coach Profile Created Successfully
+            </div>
+        }
+
+        <div class="col-md-12">
+            <div class="box box-info">
+                <h4 class="box-header">Personal Details</h4>
+                <div class="row">
+                    <div class="form-group col-md">
+                        @* Add your form fields here *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
